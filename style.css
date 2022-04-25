@@ -2,6 +2,10 @@
     --border-radius:12px
 }
 
+*{
+    font-family: sans-serif;
+}
+
 body{
     background-image: linear-gradient(to bottom right, rgb(244,67,184),rgb(24,13,231));
     width: 100vw;
@@ -12,16 +16,17 @@ body{
     align-items: center;
 }
 
-img{
-    width: 100%;
-    height: 100%;
-    border-radius: var(--border-radius) 0px 0px var(--border-radius);
+
+.container{
+    background-image: url(mod.png);
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
 }
 
 .container{
     margin: 10vh 10vw;
-    width: 70vw;
-    height: 75vh;
+    width: 70vw; 
+    aspect-ratio : 7 / 4;
     border-radius: var(--border-radius);
     border: 1px solid white;
     display: flex;
@@ -49,5 +54,23 @@ img{
 
 .container div{
     width: 50%;
+    height: 100%;
+}
+
+h1{
+    font-size: 1.6vw;
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    translate: -50%;
+}
+
+h2{
+    font-size: 1.1vw;
+    color: white;
+    position: absolute;
+    top: 36%;
+    left: 12em;
 }
 
