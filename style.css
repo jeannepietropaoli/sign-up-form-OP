@@ -18,11 +18,6 @@ body{
     align-items: center;
 }
 
-body::-webkit-scrollbar-track{
-    border:1px gray solid;
-    border-radius:10px;
-    -webkit-box-shadow:0 0 6px gray inset;
-    }
 
 .container{
     background-image: url(mod.png);
@@ -35,7 +30,7 @@ body::-webkit-scrollbar-track{
     width: 100vw; 
     aspect-ratio : 15 / 8;
     border-radius: var(--border-radius);
-    border: 1px solid white;
+    
     display: flex;
     box-shadow: 3px 3px 25px black;
 }
@@ -51,7 +46,7 @@ body::-webkit-scrollbar-track{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    bottom: 5px;
+    bottom: 7px;
 }
 
 .right{
@@ -64,27 +59,44 @@ body::-webkit-scrollbar-track{
     overflow-y: hidden;
 }
 
-.right h3{
+.right legend{
     font-size:clamp(14px, 1.6vw, 20px);
 }
 
-.rightCont{
-    overflow-y: auto;
-    
+.rightCont p{
+    padding-bottom: 5%;
+}
+
+.rightCont{  /* allow the scrollbar to have a border radius */
+    overflow-y: auto;   
 }
 
 .right>* {
     font-size: clamp(11px, 1.3vw, 17px);
+}
+
+.rightCont>p{
     box-sizing: border-box;
     padding-left: 3%;
-    padding-right: 8%;
+    padding-right: 5%;
+    line-height: 1.3;
+}
+
+#formContainer{
+    border: 1px solid green;
+    padding: 0;
+    display: block;
 }
 
 input{
+    position: relative;
     font-size: clamp(11px, 1.3vw, 17px);
-    width: clamp(150px,14vw,400px);
+    width: clamp(150px,13vw,400px);
     height: 1em;
-}
+    border-style: solid;
+    border-width: 2px;
+    border-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231)) 1;
+}   
 
 .left,
 .right{
@@ -111,7 +123,18 @@ input{
 
 label{
     display: inline-block;
-    font-size: clamp(7px, 0.9vw, 13px);
+    font-size: clamp(7px, 0.8vw, 11px);
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: rgb(24,13,231) ;
+    background-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231));
+   
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    
+    
 }
 
 input{
@@ -121,6 +144,23 @@ input{
 
 button{
     display: block;
+    margin-left: 3%;
+    margin-right: 5%;
+    margin-top: 3%;
+    width: max(35%, 115px);
+}
+
+fieldset{
+    border: none;
+}
+
+form{
+    box-shadow: 0px 4px 10px -5px black;
+    padding: 3% 0 3% 0;
+}
+
+.login{
+    font-size: clamp(9px, 0.8vw, 12px);
 }
 
 

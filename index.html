@@ -16,34 +16,36 @@
         </div>
         <div class="right">
             <div class="rightCont">
-                <p>This is not a real online service! You know you need something like this in your life to help you realize your dreams.</p>
-                <p>Sign up to get started.</p>
-                <h3>Let's do this!</h3>
-                <form action="" method="post">
-                    <label for="firstName">FIRST NAME
-                        <input type="text" id="firstName" name="userFirstName">
-                    </label>
-            
-                    <label for="lastName">LAST NAME
-                        <input type="text" id="lastName" name="userLastName">
-                    </label>
-                    <label for="email">EMAIL
-                        <input type="email" id="email" name="userEmail">
-                    </label>
-                    <label for="phoneNumber">PHONE NUMBER
-                        <input type="tel" id="phoneNumber" name="userPhoneNumber">
-                    </label>
-                    <label for="password">PASSWORD
-                        <input type="password" id="password" name="userPassword">
-                    </label>
-                    <label for="confirmPassword">CONFIRM PASSWORD
-                        <input type="password" id="confirmPassword" name="confirmPassword">
-                    </label>
-            
-                    <button type="submit">Create Account</button>
-                </form>
-                <p>Already have an account?</p>
-                <span><a href="">Log in</a></span>
+                <p>This is not a real online service! You know you need something like this in your life to help you realize your dreams. <br>Sign up <em>now</em> to get started.</p>
+                <div class="formContainer">
+                    <form action="" method="post" id="signUpForm">
+                        <fieldset>
+                            <legend>Let's do this!</legend>
+                            <label for="firstName">FIRST NAME
+                                <input type="text" id="firstName" name="userFirstName">
+                            </label>
+                            <label for="lastName">LAST NAME
+                                <input type="text" id="lastName" name="userLastName">
+                            </label>
+                            <label for="email">EMAIL
+                                <input type="email" id="email" name="userEmail">
+                            </label>
+                            <label for="phoneNumber">PHONE NUMBER
+                                <input type="tel" id="phoneNumber" name="userPhoneNumber">
+                            </label>
+                            <label for="password">PASSWORD
+                                <input type="password" id="password" name="userPassword">
+                            </label>
+                            <label for="confirmPassword">CONFIRM PASSWORD
+                                <input type="password" id="confirmPassword" name="confirmPassword">
+                            </label>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <button type="submit" form="signUpForm">Create Account</button>
+
+                <p class="login">Already have an account? <a href="">Log in</a> </p>
             </div>
                 </div>
         </div>
