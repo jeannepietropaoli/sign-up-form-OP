@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+
 :root{
     --border-radius:12px
-}
+} 
 
 *{
-    font-family: sans-serif;
+    font-family: 'ABeeZee', sans-serif;
 }
 
 body{
@@ -16,6 +18,11 @@ body{
     align-items: center;
 }
 
+body::-webkit-scrollbar-track{
+    border:1px gray solid;
+    border-radius:10px;
+    -webkit-box-shadow:0 0 6px gray inset;
+    }
 
 .container{
     background-image: url(mod.png);
@@ -24,9 +31,9 @@ body{
 }
 
 .container{
-    margin: 10vh 10vw;
-    width: 70vw; 
-    aspect-ratio : 7 / 4;
+    margin: 10vh 13vw;
+    width: 100vw; 
+    aspect-ratio : 15 / 8;
     border-radius: var(--border-radius);
     border: 1px solid white;
     display: flex;
@@ -40,7 +47,7 @@ body{
 .left::after{
     content: 'created by coolvector';
     color: white;
-    font-size: 12px;
+    font-size: clamp(8px, 1vw, 13px);
     position: absolute;
     left: 50%;
     transform: translate(-50%);
@@ -50,14 +57,42 @@ body{
 .right{
     background-color: white;
     border-radius: 0px var(--border-radius) var(--border-radius) 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1%;
+    overflow-y: hidden;
 }
 
-.container div{
+.right h3{
+    font-size:clamp(14px, 1.6vw, 20px);
+}
+
+.rightCont{
+    overflow-y: auto;
+    
+}
+
+.right>* {
+    font-size: clamp(11px, 1.3vw, 17px);
+    box-sizing: border-box;
+    padding-left: 3%;
+    padding-right: 8%;
+}
+
+input{
+    font-size: clamp(11px, 1.3vw, 17px);
+    width: clamp(150px,14vw,400px);
+    height: 1em;
+}
+
+.left,
+.right{
     width: 50%;
     height: 100%;
 }
 
-h1{
+.left h1{
     font-size: 1.6vw;
     color: white;
     position: absolute;
@@ -66,11 +101,28 @@ h1{
     translate: -50%;
 }
 
-h2{
+.left h2{
     font-size: 1.1vw;
     color: white;
     position: absolute;
     top: 36%;
     left: 12em;
 }
+
+label{
+    display: inline-block;
+    font-size: clamp(7px, 0.9vw, 13px);
+}
+
+input{
+    display: block;
+    margin-right: 1vw;
+}
+
+button{
+    display: block;
+}
+
+
+
 
