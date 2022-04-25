@@ -96,6 +96,7 @@ input{
     border-style: solid;
     border-width: 2px;
     border-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231)) 1;
+    color: red;
 }   
 
 .left,
@@ -133,13 +134,21 @@ label{
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
-    
-    
 }
+
+input:focus{
+    -webkit-text-fill-color: rgb(24,13,231); 
+    -moz-text-fill-color: rgb(24,13,231);
+    outline-color: rgb(244,67,184);
+}
+
 
 input{
     display: block;
     margin-right: 1vw;
+    -webkit-text-fill-color: rgb(24,13,231); 
+    -moz-text-fill-color: rgb(24,13,231);
+    color: red;                 
 }
 
 button{
