@@ -6,9 +6,7 @@ const EMAILINPUT = document.querySelector('input[name="userEmail"]');
 const PASSWORD = document.querySelector('input[name="userPassword"]');
 const PASSWORDCHECK = document.querySelector('input[name="confirmPassword"]');
 const SUBMITBTN = document.querySelector('button');
-const BTNWRAPPER = document.querySelector('.subm_tc');
 const NOMATCHMSESSAGE = document.querySelector('.noMatch');
-let readyToSubmit = false;
 
 LABELS.forEach(label => {
     let labelength = label.innerHTML.length;
@@ -21,14 +19,11 @@ REQUIREDINPUTS.forEach(requiredInput =>{
             if (!(SUBMITBTN.classList.contains('addGradient'))){
                 SUBMITBTN.classList.add('addGradient');
                 SUBMITBTN.disabled = false;
-
             }   
         }
-        else{
-            if (SUBMITBTN.classList.contains('addGradient')){
+        else if (SUBMITBTN.classList.contains('addGradient')){
                 SUBMITBTN.classList.remove('addGradient');
                 SUBMITBTN.disabled = true;
-            }
         }
     })
 })

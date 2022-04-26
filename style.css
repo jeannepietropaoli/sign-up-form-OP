@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
 
 :root{
-    --border-radius:12px
+    --border-radius:12px;
+    --blue-color:rgb(24,13,231);
+    --pink-color:rgb(244,67,184);
 } 
 
 *{
@@ -11,7 +13,6 @@
 
 body{
     background-image: url(mod.png);
-    background-repeat: no-repeat;
     background-size: 150%;
     width: 100vw;
     height: 100vh;
@@ -23,83 +24,16 @@ body{
 
 .container{
     background-image: url(mod.png);
-    background-repeat: no-repeat;
     background-size: 50% 100%;
 }
 
 .container{
     margin: 10vh 13vw;
-    width: 100vw; 
     aspect-ratio : 15 / 8;
     border-radius: var(--border-radius);
-    
     display: flex;
     box-shadow: 3px 3px 25px black;
 }
-
-.left{
-    position: relative;
-}
-
-.left::after{
-    content: 'created by coolvector';
-    color: white;
-    font-size: clamp(8px, 1vw, 13px);
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: 7px;
-}
-
-.right{
-    background-color: white;
-    border-radius: 0px var(--border-radius) var(--border-radius) 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1%;
-    overflow-y: hidden;
-}
-
-.right legend{
-    font-size:clamp(14px, 1.6vw, 20px);
-}
-
-.rightCont p{
-    padding-bottom: 5%;
-}
-
-.rightCont{  /* allow the scrollbar to have a border radius */
-    overflow-y: auto;   
-}
-
-.right>* {
-    font-size: clamp(11px, 1.3vw, 17px);
-}
-
-.rightCont>p{
-    box-sizing: border-box;
-    padding-left: 3%;
-    padding-right: 5%;
-    line-height: 1.3;
-}
-
-#formContainer{
-    border: 1px solid green;
-    padding: 0;
-    display: block;
-}
-
-input{
-    position: relative;
-    font-size: clamp(11px, 1.3vw, 17px);
-    width: clamp(150px,13vw,400px);
-    height: 1em;
-    border-style: solid;
-    border-width: 2px;
-    border-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231)) 1;
-    color: red;
-}   
 
 .left,
 .right{
@@ -117,54 +51,97 @@ input{
     border-right: 0.4em solid white;
 }
 
-.left h1{
-    font-family: 'Heebo', sans-serif;
-    font-size: 4vw;
-    line-height: 1em;
-    color: white;
-    text-align: right;
-    margin: 0;
-}
-
-.left h2{
-    font-family: 'Heebo', sans-serif;
-    font-size: 1.1vw;
+.left h1,
+.left h2 {
     color: white;
     margin: 0 ;
     text-align: right;
+    font-family: 'Heebo', sans-serif;
+}
+
+.left h1{
+    font-size: 4vw;
+    line-height: 1em;
+}
+
+.left h2{
+    font-size: 1.1vw;
+}
+
+.left{
+    position: relative;
+}
+
+.left::after{
+    content: 'created by coolvector';
+    color: white;
+    font-size: clamp(8px, 1vw, 13px);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);   /* substract the content width to center the element */
+    bottom: 7px;
+}
+
+.right{
+    background-color: white;
+    border-radius: 0px var(--border-radius) var(--border-radius) 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1%;
+    overflow-y: hidden;
+}
+
+.right>* {
+    font-size: clamp(11px, 1.3vw, 17px);
+}
+
+.rightCont{  /* allow the scrollbar to have a border radius */
+    overflow-y: auto;   
+}
+
+.right legend{
+    font-size:clamp(14px, 1.6vw, 20px);
+}
+
+.rightCont>p{
+    box-sizing: border-box;
+    padding-left: 3%;
+    padding-right: 5%;
+    line-height: 1.3;
+    padding-bottom: 5%;
+}
+
+fieldset{
+    border: none;
+}
+
+form{
+    box-shadow: 0px 4px 10px -5px black;
+    padding: 3% 0 3% 0;
 }
 
 .formField{
     display: inline-block;
 }
 
-label{
-    display: block;
-    font-size: clamp(7px, 0.8vw, 11px);
-    margin-top: 10px;
-    font-weight: bold;
-    background-color: rgb(24,13,231) ;
-    background-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231));
-   
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-text-fill-color: transparent;
-}
-
-input:focus{
-    -webkit-text-fill-color: rgb(24,13,231); 
-    -moz-text-fill-color: rgb(24,13,231);
-    outline-color: rgb(244,67,184);
-}
-
-
 input{
+    position: relative;
+    font-size: clamp(11px, 1.3vw, 17px);
+    width: clamp(150px,13vw,400px);
+    height: 1em;
+    border-width: 2px;
+    border-image: linear-gradient(45deg, var(--pink-color), var(--blue-color)) 1;
     display: inline-block;
     margin-right: 1vw;
-    -webkit-text-fill-color: rgb(24,13,231); 
-    -moz-text-fill-color: rgb(24,13,231);
-    color: red;                 
+    color: var(--blue-color);
+}   
+
+input:focus{
+    -webkit-text-fill-color: var(--blue-color); 
+    -moz-text-fill-color: var(--blue-color);
+    outline-color: var(--pink-color);
+    color: var(--blue-color);
 }
 
 input[required] + span{
@@ -176,7 +153,7 @@ input[required] + span::before {
     content: 'required';
     font-size: clamp(7px, 0.9vw, 11px);
     padding: 0.1vw;
-    background-color: rgb(24,13,231);
+    background-color: var(--blue-color);
     color: white;
     position: absolute;
     top: -1.5em;
@@ -206,6 +183,19 @@ input[required]:valid + span::after {
     right: 3px;
 }
 
+label{
+    display: block;
+    font-size: clamp(7px, 0.8vw, 11px);
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: var(--blue-color) ;
+    background-image: linear-gradient(45deg, var(--pink-color), var(--blue-color));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent
+}
+
 button{
     display: inline-block;
     margin-left: 3%;
@@ -216,13 +206,13 @@ button{
     font-size: clamp(10px, 0.7vw, 15px);
     font-weight: bold;
     color: rgb(24,13,231);
-    border-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231)) 1;
+    border-image: linear-gradient(45deg, var(--pink-color), var(--blue-color)) 1;
     background-color: white;
 }
 
 button:hover{
     cursor: pointer;
-    background-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231));
+    background-image: linear-gradient(45deg, var(--pink-color), var(--blue-color));
     color: white;
 }
 
@@ -233,15 +223,6 @@ button:hover{
     font-size: clamp(9px, 0.8vw, 12px);
 }
 
-fieldset{
-    border: none;
-}
-
-form{
-    box-shadow: 0px 4px 10px -5px black;
-    padding: 3% 0 3% 0;
-}
-
 .login{
     font-size: clamp(9px, 0.8vw, 12px);
 }
@@ -249,7 +230,7 @@ form{
 a{
     text-decoration: none;
     font-weight: bold;
-    background-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231));
+    background-image: linear-gradient(45deg, var(--pink-color), var(--blue-color));
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
@@ -257,7 +238,7 @@ a{
 }
 
 .addGradient{
-    background-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231));
+    background-image: linear-gradient(45deg, var(--pink-color), var(--blue-color));
     background-size: 200% 100%;
     animation: gradient 4s linear infinite;
     animation-direction: alternate;
