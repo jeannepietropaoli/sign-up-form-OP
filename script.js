@@ -5,13 +5,11 @@ const LASTNAMEINPUT = document.querySelector('input[name="userLastName"]');
 const EMAILINPUT = document.querySelector('input[name="userEmail"]');
 const PASSWORD = document.querySelector('input[name="userPassword"]');
 const PASSWORDCHECK = document.querySelector('input[name="confirmPassword"]');
-
-
 const SUBMITBTN = document.querySelector('button');
 
 LABELS.forEach(label => {
     let labelength = label.innerHTML.length;
-    label.style.backgroundSize = `${labelength-38}px`;
+    label.style.backgroundSize = `${labelength+95}px`;
 })
 
 REQUIREDINPUTS.forEach(requiredInput =>{
@@ -19,8 +17,7 @@ REQUIREDINPUTS.forEach(requiredInput =>{
         if (NAMEINPUT.checkValidity() && LASTNAMEINPUT.checkValidity() && EMAILINPUT.checkValidity() && PASSWORD.checkValidity() && PASSWORD.value===PASSWORDCHECK.value){
             if (!(SUBMITBTN.classList.contains('addGradient'))){
                 SUBMITBTN.classList.add('addGradient');
-            }
-            
+            }   
         }
         else{
             if (SUBMITBTN.classList.contains('addGradient')){
@@ -30,13 +27,13 @@ REQUIREDINPUTS.forEach(requiredInput =>{
     })
 })
 
+REQUIREDINPUTS.forEach(requiredInput =>{
+    requiredInput.addEventListener('click', function(){
+        requiredInput.removeAttribute('placeholder');
+    })
+})
 
 
 
-/* if (requiredInput.checkValidity()){
-    requiredInput.style.outlineColor = 'green';
-    }
-else {
-    requiredInput.style.outlineColor = 'red';
-    allValidInputs = false;
-} */
+
+

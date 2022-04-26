@@ -122,8 +122,12 @@ input{
     left: 12em;
 }
 
-label{
+.formField{
     display: inline-block;
+}
+
+label{
+    display: block;
     font-size: clamp(7px, 0.8vw, 11px);
     margin-top: 10px;
     font-weight: bold;
@@ -144,11 +148,49 @@ input:focus{
 
 
 input{
-    display: block;
+    display: inline-block;
     margin-right: 1vw;
     -webkit-text-fill-color: rgb(24,13,231); 
     -moz-text-fill-color: rgb(24,13,231);
     color: red;                 
+}
+
+input[required] + span{
+    position: relative;
+    display: inline;
+}
+
+input[required] + span::before {
+    content: 'required';
+    font-size: clamp(7px, 0.9vw, 11px);
+    background-color: rgb(24,13,231);
+    color: white;
+    position: absolute;
+    top: -1.3em;
+    right: 1.3em;
+}
+
+input[required]:invalid:placeholder-shown + span::after {
+    visibility: hidden;
+}
+
+input[required]:invalid:not(:placeholder-shown) + span::after {
+    content: 'x';
+    font-size: clamp(7px, 0.9vw, 11px);
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: visible;
+}
+
+input[required]:valid + span::after {
+    content: ' 🗸';
+    font-size: clamp(7px, 0.9vw, 11px);
+    color: green;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 button{
@@ -160,6 +202,15 @@ button{
     padding: 1%;
     font-size: clamp(10px, 0.7vw, 15px);
     font-weight: bold;
+    border-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231)) 1;
+    background-color: white;
+}
+
+button:hover{
+    cursor: pointer;
+    background-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231));
+    
+    color: white;
 }
 
 fieldset{
