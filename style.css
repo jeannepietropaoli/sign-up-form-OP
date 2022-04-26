@@ -157,6 +157,9 @@ button{
     margin-right: 5%;
     margin-top: 3%;
     width: max(35%, 115px);
+    padding: 1%;
+    font-size: clamp(10px, 0.7vw, 15px);
+    font-weight: bold;
 }
 
 fieldset{
@@ -170,6 +173,19 @@ form{
 
 .login{
     font-size: clamp(9px, 0.8vw, 12px);
+}
+
+.addGradient{
+    background-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231));
+    background-size: 200% 100%;
+    animation: gradient 1s linear infinite;
+    animation-direction: alternate;
+    color: white;
+}
+
+@keyframes gradient {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
 }
 
 
