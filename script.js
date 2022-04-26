@@ -6,6 +6,9 @@ const EMAILINPUT = document.querySelector('input[name="userEmail"]');
 const PASSWORD = document.querySelector('input[name="userPassword"]');
 const PASSWORDCHECK = document.querySelector('input[name="confirmPassword"]');
 const SUBMITBTN = document.querySelector('button');
+const BTNWRAPPER = document.querySelector('.subm_tc');
+const NOMATCHMSESSAGE = document.querySelector('.noMatch');
+let readyToSubmit = false;
 
 LABELS.forEach(label => {
     let labelength = label.innerHTML.length;
@@ -17,11 +20,14 @@ REQUIREDINPUTS.forEach(requiredInput =>{
         if (NAMEINPUT.checkValidity() && LASTNAMEINPUT.checkValidity() && EMAILINPUT.checkValidity() && PASSWORD.checkValidity() && PASSWORD.value===PASSWORDCHECK.value){
             if (!(SUBMITBTN.classList.contains('addGradient'))){
                 SUBMITBTN.classList.add('addGradient');
+                SUBMITBTN.disabled = false;
+
             }   
         }
         else{
             if (SUBMITBTN.classList.contains('addGradient')){
                 SUBMITBTN.classList.remove('addGradient');
+                SUBMITBTN.disabled = true;
             }
         }
     })
@@ -31,6 +37,14 @@ REQUIREDINPUTS.forEach(requiredInput =>{
     requiredInput.addEventListener('click', function(){
         requiredInput.removeAttribute('placeholder');
     })
+})
+
+PASSWORDCHECK.addEventListener('input', function(){
+    (PASSWORD.value!==PASSWORDCHECK.value)? NOMATCHMSESSAGE.textContent='Passwords are not matching!':NOMATCHMSESSAGE.textContent='';
+})
+
+PASSWORD.addEventListener('input', function(){
+    (PASSWORD.value!==PASSWORDCHECK.value)? NOMATCHMSESSAGE.textContent='Passwords are not matching!':NOMATCHMSESSAGE.textContent='';
 })
 
 

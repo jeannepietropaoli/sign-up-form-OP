@@ -11,8 +11,10 @@
 <body>
     <div class="container">
         <div class="left">
-            <h1>Welcome to Imaginary World</h1>
-            <h2>Join us by signing up!</h2>
+            <div class="h1Container">
+                <h1>WELCOME<br>TO<br>UNREALM</h1>
+                <h2>Join us by signing up!</h2>
+            </div>
         </div>
         <div class="right">
             <div class="rightCont">
@@ -60,7 +62,11 @@
                     </form>
                 </div>
 
-                <button type="submit" form="signUpForm">Create Account</button>
+                <div>
+                    <button type="submit" form="signUpForm" disabled>Create Account</button>
+                    <span class="noMatch"></span>
+                </div>
+                
 
                 <p class="login">Already have an account? <a href="">Log in</a> </p>
             </div>

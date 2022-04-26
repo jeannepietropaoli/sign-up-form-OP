@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
 
 :root{
     --border-radius:12px
@@ -9,7 +10,9 @@
 }
 
 body{
-    background-image: linear-gradient(to bottom right, rgb(244,67,184),rgb(24,13,231));
+    background-image: url(mod.png);
+    background-repeat: no-repeat;
+    background-size: 150%;
     width: 100vw;
     height: 100vh;
     margin: 0px;
@@ -17,7 +20,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-
 
 .container{
     background-image: url(mod.png);
@@ -105,21 +107,31 @@ input{
     height: 100%;
 }
 
-.left h1{
-    font-size: 1.6vw;
-    color: white;
+.h1Container{
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 30%;
-    left: 25%;
-    translate: -50%;
+    top: 33%;
+    right: 5%;
+    padding-right: 5%;
+    border-right: 0.4em solid white;
+}
+
+.left h1{
+    font-family: 'Heebo', sans-serif;
+    font-size: 4vw;
+    line-height: 1em;
+    color: white;
+    text-align: right;
+    margin: 0;
 }
 
 .left h2{
+    font-family: 'Heebo', sans-serif;
     font-size: 1.1vw;
     color: white;
-    position: absolute;
-    top: 36%;
-    left: 12em;
+    margin: 0 ;
+    text-align: right;
 }
 
 .formField{
@@ -163,11 +175,12 @@ input[required] + span{
 input[required] + span::before {
     content: 'required';
     font-size: clamp(7px, 0.9vw, 11px);
+    padding: 0.1vw;
     background-color: rgb(24,13,231);
     color: white;
     position: absolute;
-    top: -1.3em;
-    right: 1.3em;
+    top: -1.5em;
+    right: 1.8em;
 }
 
 input[required]:invalid:placeholder-shown + span::after {
@@ -180,7 +193,7 @@ input[required]:invalid:not(:placeholder-shown) + span::after {
     color: red;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 3px;
     visibility: visible;
 }
 
@@ -190,11 +203,11 @@ input[required]:valid + span::after {
     color: green;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 3px;
 }
 
 button{
-    display: block;
+    display: inline-block;
     margin-left: 3%;
     margin-right: 5%;
     margin-top: 3%;
@@ -202,6 +215,7 @@ button{
     padding: 1%;
     font-size: clamp(10px, 0.7vw, 15px);
     font-weight: bold;
+    color: rgb(24,13,231);
     border-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231)) 1;
     background-color: white;
 }
@@ -209,8 +223,14 @@ button{
 button:hover{
     cursor: pointer;
     background-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231));
-    
     color: white;
+}
+
+.noMatch{
+    position: relative;
+    display: inline;
+    color: red;
+    font-size: clamp(9px, 0.8vw, 12px);
 }
 
 fieldset{
@@ -226,10 +246,20 @@ form{
     font-size: clamp(9px, 0.8vw, 12px);
 }
 
+a{
+    text-decoration: none;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent; ;
+}
+
 .addGradient{
     background-image: linear-gradient(45deg, rgb(244,67,184), rgb(24,13,231));
     background-size: 200% 100%;
-    animation: gradient 1s linear infinite;
+    animation: gradient 4s linear infinite;
     animation-direction: alternate;
     color: white;
 }
